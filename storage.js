@@ -10,7 +10,7 @@ function getCookie(cname) {
   const cookeArr = document.cookie.split(';')
   for (let i = 0; i < cookeArr.length; i++) {
     let cookieItem = cookeArr[i].trim()
-    if (cookieItem.indexOf(name) === 0) return cookieItem.substring(name.length, cookieItem.length)
+    if (cookieItem.indexOf(name) === 0) return cookieItem.substr(name.length)
   }
   return ''
 }
