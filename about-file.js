@@ -10,6 +10,7 @@ function downloadBlobFile(blob, filename) {
   const a = document.createElement('a')
   if ('download' in a) {
     document.body.appendChild(a)
+    a.style.display = 'none'
     a.href = objUrl
     a.download = filename
     a.click()
