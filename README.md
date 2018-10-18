@@ -1,3 +1,3 @@
-# personal utils
+# Personal utils
 
 Collect or record utils constantly.

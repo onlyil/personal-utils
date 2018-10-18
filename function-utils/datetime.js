@@ -2,11 +2,11 @@
 /**
  * format date from Date.getDate()
  * eg. 2 -> '02'; 12 -> '12'
- * @param {number} date
+ * @param {number} day
  * @returns {string}
  */
-function formatDate(date) {
-  return date.toString().length < 2 ? '0' + date : '' + date
+function formatDay(day) {
+  return day.toString().length < 2 ? '0' + day : '' + day
 }
 
 /**
@@ -85,4 +85,14 @@ function getLastDate(date) {
     day = dateObj.getDate()
   let lastDateObj = new Date(year, month, day - 1)
   return getFormatDate(lastDateObj)
+}
+
+export default {
+  formatDay,
+  formatMonth,
+  getFormatDate,
+  getTheMonthDaysNum,
+  getWeekOfDate,
+  getNextDate,
+  getLastDate
 }

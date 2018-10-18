@@ -28,3 +28,8 @@ function setCookie(cname, cvalue, exdays = 7) {
   const expires = 'expires=' + date.toGMTString()
   document.cookie = cname + '=' + cvalue + '; ' + expires
 }
+
+export default {
+  getCookie,
+  setCookie
+}
