@@ -1,4 +1,4 @@
-### debounce
+## debounce
 
 Receive a click method and invoke it debounced.
 
