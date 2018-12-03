@@ -25,18 +25,18 @@ function downloadBlobFile(blob, filename) {
 /**
  * Data URL to Blob
  *
- * @param {string} dataurl
+ * @param {string} dataUrl
  * @returns {object(blob)}
  */
-function DataURLtoBlob(dataurl) {
-  const matches = dataurl.match(/^data:(\w+\/\w+)?(;base64)?,(\S+)$/)
-  const mediatype = matches[1] || 'text/plain'
+function DataURLtoBlob(dataUrl) {
+  const matches = dataUrl.match(/^data:(\w+\/\w+)?(;base64)?,(\S+)$/)
+  const mediaType = matches[1] || 'text/plain'
   const binaryStr = atob(matches[3])
   const typedArr = new Uint8Array(binaryStr.length)
   for (let i = 0; i < binaryStr.length; i++) {
     typedArr[i] = binaryStr.charCodeAt(i)
   }
-  return new Blob([typedArr], { type: mediatype })
+  return new Blob([typedArr], { type: mediaType })
 }
 
 /**
@@ -45,7 +45,7 @@ function DataURLtoBlob(dataurl) {
  * @param {object(blob)} blob
  * @param {function} cb
  */
-function BlobtoDataURL(blob, cb) {
+function Blob2DataURL(blob, cb) {
   const reader = new FileReader()
   reader.addEventListener('load', function () {
     cb(this.result)
@@ -56,5 +56,5 @@ function BlobtoDataURL(blob, cb) {
 export default {
   downloadBlobFile,
   DataURLtoBlob,
-  BlobtoDataURL
+  Blob2DataURL
 }
