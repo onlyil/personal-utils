@@ -28,7 +28,7 @@ function downloadBlobFile(blob, filename) {
  * @param {string} dataUrl
  * @returns {object(blob)}
  */
-function DataURLtoBlob(dataUrl) {
+function dataURL2Blob(dataUrl) {
   const matches = dataUrl.match(/^data:(\w+\/\w+)?(;base64)?,(\S+)$/)
   const mediaType = matches[1] || 'text/plain'
   const binaryStr = atob(matches[3])
@@ -45,7 +45,7 @@ function DataURLtoBlob(dataUrl) {
  * @param {object(blob)} blob
  * @param {function} cb
  */
-function Blob2DataURL(blob, cb) {
+function blob2DataURL(blob, cb) {
   const reader = new FileReader()
   reader.addEventListener('load', function () {
     cb(this.result)
@@ -55,6 +55,6 @@ function Blob2DataURL(blob, cb) {
 
 export default {
   downloadBlobFile,
-  DataURLtoBlob,
-  Blob2DataURL
+  dataURL2Blob,
+  blob2DataURL
 }
